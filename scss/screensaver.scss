@@ -1,0 +1,32 @@
+@import "common.scss";
+
+.screensaver__page {
+}
+.screensaver__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px 20px 0 0;
+    background-color: #2B2B2B;
+    width: 100%;
+}
+.screensaver__body {
+    width: 91.3%;
+    @extend %flexCenter;
+    padding: 200px 0;
+    @media screen and (max-width: 490px) {
+        padding: 44px 0 91px 0;
+    }
+}
+.screensaver__img {
+    width: 100%;
+    @media screen and (max-width: 490px) {
+        display: none;
+    }
+}
+.screensaver__img-mobile {
+    display: none;
+    @media screen and (max-width: 490px) {
+        display: block !important;
+    }
+}
