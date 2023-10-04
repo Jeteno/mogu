@@ -34,19 +34,46 @@ window.addEventListener('scroll', function() {
     }
 });
 
-scrolMainScreen.addEventListener('click', () => {
+let isScrolling = false; 
+
+scrollMainScreen.addEventListener('click', () => {
     mainScreenPage.scrollIntoView({ behavior: 'smooth' });
+    isScrolling = true; 
 });
+
 scrollCards.addEventListener('click', () => {
-    cardsPage.scrollIntoView({ behavior: 'smooth' });
+    if (isScrolling) {
+        isScrolling = false; 
+    } else {
+        cardsPage.scrollIntoView({ behavior: 'smooth' });
+        isScrolling = true; 
+    }
 });
+
 scrollFunctional.addEventListener('click', () => {
-    functionalPage.scrollIntoView({ behavior: 'smooth' });
+    if (isScrolling) {
+        isScrolling = false; 
+    } else {
+        functionalPage.scrollIntoView({ behavior: 'smooth' });
+        isScrolling = true; 
+    }
 });
+
 scrollFeedback.addEventListener('click', () => {
-    feedbackPage.scrollIntoView({ behavior: 'smooth' });
+    if (isScrolling) {
+        isScrolling = false; 
+    } else {
+        feedbackPage.scrollIntoView({ behavior: 'smooth' });
+        isScrolling = true; 
+    }
 });
+
 scrollScreensaver.addEventListener('click', () => {
-    screensaverPage.scrollIntoView({ behavior: 'smooth' });
+    if (isScrolling) {
+        isScrolling = false; 
+    } else {
+        screensaverPage.scrollIntoView({ behavior: 'smooth' });
+        isScrolling = true; 
+    }
 });
 
