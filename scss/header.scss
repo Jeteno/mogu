@@ -1,6 +1,7 @@
 @import "common.scss";
 .header__page {
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color: white;
     z-index: 1;
@@ -90,6 +91,10 @@
     @media screen and (max-width: 1020px) {
         text-align: left;
     }
+}
+.active {
+    text-decoration: underline;
+    color: #000;
 }
 .header__button {
     border-radius: 30px;

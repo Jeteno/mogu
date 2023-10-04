@@ -10,42 +10,42 @@ html(lang="ru")
    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap", rel="stylesheet")
    link(href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap", rel="stylesheet")    
    link(rel="stylesheet", href="./../css/style.css", type="text/css")
-  div.wrapper
+  .wrapper
       header.header__page.page
-         div.header__container.container
-            div.header__body.body
-               a.header__logo#scrolMainScreen
+         .header__container.container
+            .header__body.body
+               a.header__logo#scrolMainScreen(href="#main-screen")
                   img.header__logo-img(src="./../img//header/logo.svg", alt="logo")
                   img.header__logo-img-text(src="./../img/header/text-logo.svg", alt="mogu")
-               div.menu__body
+               .menu__body
                   nav.header__nav-bar-menu.nav-bar-menu
                      ul.nav-bar-menu__list
                         li.nav-bar-menu__paragraph
-                           a.nav-bar-menu__paragraph-link#scrollCards(href="#")
+                           a.nav-bar-menu__paragraph-link#scrollCards(href="#cards")
                               | О нас
                         li.nav-bar-menu__paragraph
-                           a.nav-bar-menu__paragraph-link#scrollFunctional(href="#")
+                           a.nav-bar-menu__paragraph-link#scrollFunctional(href="#functional")
                               | Кейсы
                         li.nav-bar-menu__paragraph
-                           a.nav-bar-menu__paragraph-link#scrollFeedback(href="#")
+                           a.nav-bar-menu__paragraph-link#scrollFeedback(href="#feedback")
                               | Обратная связь
                   button.header__button
                      | Войти
-               div.menu__icon
+               .menu__icon
                   span
       main.main
-         section.main-screen__page.page
-            div.main-screen__container.container
-               div.main-screen__body.body
-                  div.main-screen__content
-                     div.main-screen__content-text
-                        div.main-screen__content-title
+         section.main-screen__page.page#main-screen
+            .main-screen__container.container
+               .main-screen__body.body
+                  .main-screen__content
+                     .main-screen__content-text
+                        .main-screen__content-title
                            h1.main-screen__content-title-h
                               | Таск-трекер для креативных команд
-                        div.main-screen__content-subtitle
+                        .main-screen__content-subtitle
                            p.main-screen__content-subtitle-p
                               | Создавайте доски, приглашайте коллег и партнеров, работайте совместно над задачами!
-                     div.main-screen__content-entry-field.entry-field
+                     .main-screen__content-entry-field.entry-field
                         ul.entry-field__list
                            li.entry-field__list-paragraph
                               | Бесплатно
@@ -53,41 +53,41 @@ html(lang="ru")
                               | Без привязки карты
                            li.entry-field__list-paragraph
                               | 2000+ пользователей
-                        div.entry-field__subscription_input.input-group
+                        .entry-field__subscription_input.input-group
                            input.input-group-control(placeholder="Электронная почта" aria-label="Электронная почта" aria-describedby="subscribe-btn")
-                           div.input-group-append
+                           .input-group-append
                            button.btn.btn-outline-secondary(type="button" id="subscribe-btn")
                               | Начать
                               span →
-                  div.main-screen__image
+                  .main-screen__image
                      img.main-screen__image-img(src="./../img/main-screen/Component.png", alt="")
                   button.main-screen__btn#scrollScreensaver 
          section.screensaver__page.page.animated__page
-            div.screensaver__container
-               div.screensaver__body
+            .screensaver__container
+               .screensaver__body
                   img.screensaver__img(src="./../img/screensaver/screensaver.png", alt="mogu")
                   img.screensaver__img-mobile(src="./../img/screensaver/screensaver-mobile.png", alt="mogu")
-         section.cards__page.page.animated__page
-            div.cards__container
-               div.cards__body
+         section.cards__page.page.animated__page#cards
+            .cards__container
+               .cards__body
                   a.card__container
-                     div.card__images
+                     .card__images
                         img.card__images-img(src="./../img/card/img.png", alt="card")
-                     div.card__content
-                        div.card__title
+                     .card__content
+                        .card__title
                            h2.card__title-h
                               | Вся информация как на ладони
-                        div.card__subtitle
+                        .card__subtitle
                            p.card__subtitle-p
                               | единая строка поиска для всех проектов - где бы ни была задача, вы быстро ее найдете
                   a.card__container
-                     div.card__images
+                     .card__images
                         img.card__images-img(src="./../img/card/Saly-23.png", alt="card")
-                     div.card__content
-                        div.card__title
+                     .card__content
+                        .card__title
                            h2.card__title-h
                               | Ничто не мешает полету мысли
-                        div.card__subtitle
+                        .card__subtitle
                            p.card__subtitle-p
                               | фиксируйте новые идеи в один клик, прикрепляйте файлы и подробные описания сути задач
                   a.card__container
@@ -95,62 +95,62 @@ html(lang="ru")
                         li.card__list-paragraph обновляйте статус задачи
                         li.card__list-paragraph следите за сроками дедлайнов
                         li.card__list-paragraph отправляйте завершенные задачи в архив
-                     div.card__images
+                     .card__images
                         img.card__images-img(src="./../img/card/Folder.png", alt="card")
-                     div.card__content
-                        div.card__title
+                     .card__content
+                        .card__title
                            h2.card__title-h Порядок в подарок
-                        div.card__subtitle
+                        .card__subtitle
                            p.card__subtitle-p задачи удобно структурировать с помощью чек-листов, меток и пользовательских полей
                   a.card__container
-                     div.card__content
-                        div.card__title
+                     .card__content
+                        .card__title
                            h2.card__title-h Совместная работа на одной доске
-                        div.card__subtitle
+                        .card__subtitle
                            p.card__subtitle-p приглашайте коллег, бизнес-партнеров и заказчиков
                   a.card__container
-                     div.card__images
+                     .card__images
                         img.card__images-img(src="./../img/card/Saly-31.png", alt="card")
                   a.card__container
-                     div.card__content
-                        div.card__title
+                     .card__content
+                        .card__title
                            h2.card__title-h Настройка под вас
-                        div.card__subtitle
+                        .card__subtitle
                            p.card__subtitle-p устанавливайте персональный фон для каждого проекта
          section.delimiter__page.page.animated__page
-            div.delimiter__container.container
-               div.delimiter__body.body
-                  div.delimiter__images
+            .delimiter__container.container
+               .delimiter__body.body
+                  .delimiter__images
                      img.delimiter__images-img(src="./../img/delimiter/separator.png", alt="delimiter")
-         section.functional__page.page.animated__page
-            div.functional__container
-               div.functional__body
-                  div.functional__card
-                     div.functional__card-content
+         section.functional__page.page.animated__page#functional
+            .functional__container
+               .functional__body
+                  .functional__card
+                     .functional__card-content
                         ul.functional__card-content-list
                            li.functional-card-contant-paragraph Product marketing
                            li.functional-card-contant-paragraph Growth marketing
                            li.functional-card-contant-paragraph Creative
                            li.functional-card-contant-paragraph Marketing
                            li.functional-card-contant-paragraph PR
-                        div.functional__card-content-text.card-content-text
-                           div.card-content-text__title
+                        .functional__card-content-text.card-content-text
+                           .card-content-text__title
                               h2.card-content-text__title-h Создание лендинга
-                           div.card-content-text__subtitle
+                           .card-content-text__subtitle
                               p.card-content-text__subtitle-p Заведите доску, пригласите дизайнера, верстальщика и маркетолога, проведите брейншторм и зафиксируйте все идеи на доске, в колонке «Бэклог», приоритизируйте идеи - с помощью меток или отдельных колонок, наиболее приоритетным - назначьте дедлайны и передайте в работу исполнителям
-                     div.functional__card-images
+                     .functional__card-images
                         img.functional__card-img(src="./../img/functional/img.png" alt="Скрин системы")
-         section.feedback__page.page.animated__page
-            div.feedback__container
-               div.feedback__body
+         section.feedback__page.page.animated__page#feedback
+            .feedback__container
+               .feedback__body
                   form.feedback__form(action="")
-                     div.feedback__form-title
+                     .feedback__form-title
                         h2.feedback__form-title-h Обратная связь
-                     div.feedback__form-group
+                     .feedback__form-group
                         input.feedback__form-group-input(type="email", name="email", placeholder="Электронная почта", required)
                      textarea.feedback__form-group-input(name="massage", placeholder="О чем хотите рассказать?", required)
                      button.feedback__form-btn(type="submit") отправить
-                  div.feedback__images
+                  .feedback__images
                      img.feedback__images-img(src="./../img/feedback/cat.png", alt="cat")
          script(src="./../index.js")
       | 

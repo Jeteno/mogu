@@ -11,6 +11,9 @@ const functionalPage = document.querySelector('.functional__page');
 const feedbackPage = document.querySelector('.feedback__page');
 const screensaverPage = document.querySelector('.screensaver__page');
 const mainScreenPage = document.querySelector('.main-screen__page');
+const menuLink = document.querySelectorAll('a.nav-bar-menu__paragraph-link');
+
+let currentIndex = 0;
  
 if (iconMenu) {
     const menuBody = document.querySelector('.menu__body');
@@ -34,19 +37,38 @@ window.addEventListener('scroll', function() {
     }
 });
 
-scrolMainScreen.addEventListener('click', () => {
-    mainScreenPage.scrollIntoView({ behavior: 'smooth' });
+function addActiveClassToLink(index) {
+    menuLink.forEach(item => item.classList.remove('active'));
+    menuLink[index].classList.add('active');
+};
+
+menuLink.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+       currentIndex = index;
+ 
+       addActiveClassToLink(currentIndex);
+    });
+ });
+
+scrolMainScreen.addEventListener('click', (event) => {
+    event.preventDefault();
+    mainScreenPage.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    addActiveClassToLink()
 });
-scrollCards.addEventListener('click', () => {
-    cardsPage.scrollIntoView({ behavior: 'smooth' });
+scrollCards.addEventListener('click', (event) => {
+    event.preventDefault();
+    cardsPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
-scrollFunctional.addEventListener('click', () => {
-    functionalPage.scrollIntoView({ behavior: 'smooth' });
+scrollFunctional.addEventListener('click', (event) => {
+    event.preventDefault();
+    functionalPage.scrollIntoView({ behavior: 'smooth', block: 'end' });
 });
-scrollFeedback.addEventListener('click', () => {
-    feedbackPage.scrollIntoView({ behavior: 'smooth' });
+scrollFeedback.addEventListener('click', (event) => {
+    event.preventDefault();
+    feedbackPage.scrollIntoView({ behavior: 'smooth', block: 'end' });
 });
-scrollScreensaver.addEventListener('click', () => {
-    screensaverPage.scrollIntoView({ behavior: 'smooth' });
+scrollScreensaver.addEventListener('click', (event) => {
+    event.preventDefault();
+    screensaverPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 

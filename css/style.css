@@ -193,7 +193,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header__page {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   background-color: white;
   z-index: 1;
@@ -341,6 +342,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.active {
+  text-decoration: underline;
+  color: #000;
+}
+
 .header__button {
   border-radius: 30px;
   background: #000;
@@ -484,10 +490,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.main-screen__page {
-  padding-top: 80px;
 }
 
 .main-screen__container {
