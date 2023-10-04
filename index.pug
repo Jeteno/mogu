@@ -14,20 +14,20 @@ html(lang="ru")
       header.header__page.page
          div.header__container.container
             div.header__body.body
-               div.header__logo
+               a.header__logo#scrolMainScreen
                   img.header__logo-img(src="./../img//header/logo.svg", alt="logo")
                   img.header__logo-img-text(src="./../img/header/text-logo.svg", alt="mogu")
                div.menu__body
                   nav.header__nav-bar-menu.nav-bar-menu
                      ul.nav-bar-menu__list
                         li.nav-bar-menu__paragraph
-                           a.nav-bar-menu__paragraph-link(href="#")
+                           a.nav-bar-menu__paragraph-link#scrollCards(href="#")
                               | О нас
                         li.nav-bar-menu__paragraph
-                           a.nav-bar-menu__paragraph-link(href="#")
+                           a.nav-bar-menu__paragraph-link#scrollFunctional(href="#")
                               | Кейсы
                         li.nav-bar-menu__paragraph
-                           a.nav-bar-menu__paragraph-link(href="#")
+                           a.nav-bar-menu__paragraph-link#scrollFeedback(href="#")
                               | Обратная связь
                   button.header__button
                      | Войти
@@ -61,15 +61,16 @@ html(lang="ru")
                               span →
                   div.main-screen__image
                      img.main-screen__image-img(src="./../img/main-screen/Component.png", alt="")
-         section.screensaver__page.page
+                  button.main-screen__btn#scrollScreensaver 
+         section.screensaver__page.page.animated__page
             div.screensaver__container
                div.screensaver__body
                   img.screensaver__img(src="./../img/screensaver/screensaver.png", alt="mogu")
                   img.screensaver__img-mobile(src="./../img/screensaver/screensaver-mobile.png", alt="mogu")
-         section.cards__page.page
+         section.cards__page.page.animated__page
             div.cards__container
                div.cards__body
-                  div.card__container
+                  a.card__container
                      div.card__images
                         img.card__images-img(src="./../img/card/img.png", alt="card")
                      div.card__content
@@ -79,7 +80,7 @@ html(lang="ru")
                         div.card__subtitle
                            p.card__subtitle-p
                               | единая строка поиска для всех проектов - где бы ни была задача, вы быстро ее найдете
-                  div.card__container
+                  a.card__container
                      div.card__images
                         img.card__images-img(src="./../img/card/Saly-23.png", alt="card")
                      div.card__content
@@ -89,7 +90,7 @@ html(lang="ru")
                         div.card__subtitle
                            p.card__subtitle-p
                               | фиксируйте новые идеи в один клик, прикрепляйте файлы и подробные описания сути задач
-                  div.card__container
+                  a.card__container
                      ul.card__list
                         li.card__list-paragraph обновляйте статус задачи
                         li.card__list-paragraph следите за сроками дедлайнов
@@ -101,27 +102,27 @@ html(lang="ru")
                            h2.card__title-h Порядок в подарок
                         div.card__subtitle
                            p.card__subtitle-p задачи удобно структурировать с помощью чек-листов, меток и пользовательских полей
-                  div.card__container
+                  a.card__container
                      div.card__content
                         div.card__title
                            h2.card__title-h Совместная работа на одной доске
                         div.card__subtitle
                            p.card__subtitle-p приглашайте коллег, бизнес-партнеров и заказчиков
-                  div.card__container
+                  a.card__container
                      div.card__images
                         img.card__images-img(src="./../img/card/Saly-31.png", alt="card")
-                  div.card__container
+                  a.card__container
                      div.card__content
                         div.card__title
                            h2.card__title-h Настройка под вас
                         div.card__subtitle
                            p.card__subtitle-p устанавливайте персональный фон для каждого проекта
-         section.delimiter__page.page
+         section.delimiter__page.page.animated__page
             div.delimiter__container.container
                div.delimiter__body.body
                   div.delimiter__images
                      img.delimiter__images-img(src="./../img/delimiter/separator.png", alt="delimiter")
-         section.functional__page.page
+         section.functional__page.page.animated__page
             div.functional__container
                div.functional__body
                   div.functional__card
@@ -139,7 +140,7 @@ html(lang="ru")
                               p.card-content-text__subtitle-p Заведите доску, пригласите дизайнера, верстальщика и маркетолога, проведите брейншторм и зафиксируйте все идеи на доске, в колонке «Бэклог», приоритизируйте идеи - с помощью меток или отдельных колонок, наиболее приоритетным - назначьте дедлайны и передайте в работу исполнителям
                      div.functional__card-images
                         img.functional__card-img(src="./../img/functional/img.png" alt="Скрин системы")
-         section.feedback__page.page
+         section.feedback__page.page.animated__page
             div.feedback__container
                div.feedback__body
                   form.feedback__form(action="")

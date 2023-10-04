@@ -83,11 +83,18 @@
         height: 20px;
         background: url("../img/card/arrow.svg") no-repeat;
         top: 50%;
-        transform: translateY(-50%);      
+        transform: translateY(-50%);    
+        transition: right 0.5s ease;  
         right: 32px;     
     }
     @media screen and (max-width: 1200px) {
         width: 100%;
+    }
+    &:hover {
+        opacity: 0.7;
+    }
+    &:hover::before {
+        right: 25px;
     }
 }
 .feedback__images {

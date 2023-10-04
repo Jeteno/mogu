@@ -21,6 +21,7 @@
     gap: 24px;
 }
 .card__container {
+    position: relative;
     display: flex;
     padding: 24px 24px 40px 24px;
     flex-direction: column;
@@ -31,6 +32,7 @@
     background: #FBEAEF;
     color: #3C711E;
     flex: 1 1 auto;
+    transition: top 0.5s ease;
     &:nth-child(-n + 2) {
         flex-basis: calc(45%);
         @media screen and (max-width: 900px) {
@@ -140,6 +142,22 @@
         flex-basis: calc(30%);
         @media screen and (max-width: 900px) {
             flex-basis: 100%;
+        }
+    }
+    &:hover {
+        animation-name: jump;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0);
         }
     }
 }

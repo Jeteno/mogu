@@ -1,5 +1,7 @@
 @import "common.scss";
-
+.main-screen__page {
+    padding-top: 80px;
+}
 .main-screen__container {
     padding: 50px 0;
     @media screen and (max-width: 490px) {
@@ -9,18 +11,6 @@
 .main-screen__body {
     position: relative;
     gap: 24px;
-    &::after {
-        position: absolute;
-        content: '';
-        background: url("../img/main-screen/arrow.svg");
-        width: 20px;
-        height: 34px;
-        bottom: 0;
-        left: 24px;
-        @media screen and (max-width: 1124px) {
-            display: none;
-        }
-    }
     @media screen and (max-width: 1124px) {
         flex-wrap: wrap;
         justify-content: center;
@@ -112,7 +102,7 @@
     height: 100%;
     border-radius: 30px;
     background: #222FDC;
-    padding: 0px 32px;
+    padding: 0 32px;    
     color: #FFF;
     font-family: 'Inter', sans-serif;
     @include adaptiveFont(28, 18);
@@ -129,6 +119,9 @@
         line-height: 48px;
         letter-spacing: -0.1px;
     }
+    &:hover {
+        opacity: 0.9;
+    }
     @media screen and (max-width: 490px) {
         padding: 16px 15px;
     }
@@ -143,4 +136,32 @@
         width: 100%;
         text-align: center;
 }
+}
+.main-screen__btn {
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    background: url("../img/main-screen/arrow.svg");
+    width: 20px;
+    height: 34px;
+    bottom: 0;
+    left: 24px;
+    animation-name: jump;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    @media screen and (max-width: 1124px) {
+        display: none;
+    }
+      
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 }
