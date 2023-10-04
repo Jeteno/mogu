@@ -77,10 +77,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 @import "common.scss";
-@import "header.scss";
-@import "mainScreen.scss";
-@import "screensaver.scss";
-@import "cards.scss";
-@import "delimiter.scss";
-@import "functional.scss";
-@import "feedback.scss";
+@import "./../components/header/header.scss";
+@import "./../components/mainScreen/mainScreen.scss";
+@import "./../components/screensaver/screensaver.scss";
+@import "./../components/cards/cards.scss";
+@import "./../components/delimiter/delimiter.scss";
+@import "./../components/functional/functional.scss";
+@import "./../components/feedback/feedback.scss";

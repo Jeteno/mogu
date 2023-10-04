@@ -1,0 +1,114 @@
+@import "./../scss/common.scss";
+
+.feedback__page {
+    background-color: #DAD4C5;
+}
+.feedback__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px 30px 0 0;
+    background-color: #fff;
+    width: 100%;
+}
+.feedback__body {
+    width: 91.3%;
+    padding: 5.2% 0 5.4% 0;
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        padding: 5.2% 2% 5.4% 2%;
+
+    }
+}
+.feedback__form {
+    display: flex;
+    width: 71%;
+    padding: 2.4% 4.6% 3.4% 4.6%;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 30px;
+    background: #F7F7F7;
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
+
+}
+.feedback__form-title-h {
+    color: #000;
+    font-family: 'Oswald', sans-serif;   
+    @include adaptiveFont(72, 32);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 80px; 
+    letter-spacing: -2px;
+    margin-bottom: 40px;
+}
+.feedback__form-group {
+    width: 100%;
+    margin-bottom: 16px;
+
+}
+.feedback__form-group-input {
+    border-radius: 30px;
+    border: 2px solid #B0B1C1;
+    padding: 30px 24px;
+    background: #FFF;
+    color: #B0B1C1;
+    font-family: 'Inter', sans-serif;
+    @include adaptiveFont(28, 18);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 40px; 
+    letter-spacing: -0.1px;
+    width: 100%;
+}
+.feedback__form-btn {
+    position: relative;
+    padding: 26px 78px 26px 32px;
+    border-radius: 30px;
+    background: #000;
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    @include adaptiveFont(28, 18);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px; 
+    letter-spacing: -0.1px;
+    margin-top: 32px;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 38px;
+        height: 20px;
+        background: url("../img/card/arrow.svg") no-repeat;
+        top: 50%;
+        transform: translateY(-50%);    
+        transition: right 0.5s ease;  
+        right: 32px;     
+    }
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+    }
+    &:hover {
+        opacity: 0.7;
+    }
+    &:hover::before {
+        right: 25px;
+    }
+}
+.feedback__images {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @media screen and (max-width: 1200px) {
+        position: relative;
+        margin-left: auto;
+        text-align: right;
+    }
+}
+.feedback__images-img {
+    @media screen and (max-width: 450px) {
+        width: 50%;
+    }
+}
