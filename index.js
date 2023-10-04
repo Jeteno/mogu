@@ -34,46 +34,47 @@ window.addEventListener('scroll', function() {
     }
 });
 
-let isScrolling = false; 
+let activeElement = null;
 
 scrollMainScreen.addEventListener('click', () => {
+  if (activeElement !== 'scrollMainScreen') {
     mainScreenPage.scrollIntoView({ behavior: 'smooth' });
-    isScrolling = true; 
+    activeElement = 'scrollMainScreen';
+  }
 });
 
 scrollCards.addEventListener('click', () => {
-    if (isScrolling) {
-        isScrolling = false; 
-    } else {
-        cardsPage.scrollIntoView({ behavior: 'smooth' });
-        isScrolling = true; 
-    }
+  if (activeElement === 'scrollCards') {
+    cardsPage.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    activeElement = 'scrollCards';
+  }
 });
 
 scrollFunctional.addEventListener('click', () => {
-    if (isScrolling) {
-        isScrolling = false; 
-    } else {
-        functionalPage.scrollIntoView({ behavior: 'smooth' });
-        isScrolling = true; 
-    }
+  if (activeElement === 'scrollFunctional') {
+    functionalPage.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    activeElement = 'scrollFunctional';
+  }
 });
 
 scrollFeedback.addEventListener('click', () => {
-    if (isScrolling) {
-        isScrolling = false; 
-    } else {
-        feedbackPage.scrollIntoView({ behavior: 'smooth' });
-        isScrolling = true; 
-    }
+  if (activeElement === 'scrollFeedback') {
+    feedbackPage.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    activeElement = 'scrollFeedback';
+  }
 });
 
 scrollScreensaver.addEventListener('click', () => {
-    if (isScrolling) {
-        isScrolling = false; 
-    } else {
-        screensaverPage.scrollIntoView({ behavior: 'smooth' });
-        isScrolling = true; 
-    }
+  if (activeElement === 'scrollScreensaver') {
+    screensaverPage.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    activeElement = 'scrollScreensaver';
+  }
 });
-
