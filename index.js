@@ -37,7 +37,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-<<<<<<< HEAD
 function addActiveClassToLink(index) {
     menuLink.forEach(item => item.classList.remove('active'));
     menuLink[index].classList.add('active');
@@ -71,49 +70,5 @@ scrollFeedback.addEventListener('click', (event) => {
 scrollScreensaver.addEventListener('click', (event) => {
     event.preventDefault();
     screensaverPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-=======
-let activeElement = null;
-
-scrollMainScreen.addEventListener('click', () => {
-  if (activeElement !== 'scrollMainScreen') {
-    mainScreenPage.scrollIntoView({ behavior: 'smooth' });
-    activeElement = 'scrollMainScreen';
-  }
->>>>>>> 6a42569a5183bab631a4665802890b06097714bf
 });
 
-scrollCards.addEventListener('click', () => {
-  if (activeElement === 'scrollCards') {
-    cardsPage.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    activeElement = 'scrollCards';
-  }
-});
-
-scrollFunctional.addEventListener('click', () => {
-  if (activeElement === 'scrollFunctional') {
-    functionalPage.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    activeElement = 'scrollFunctional';
-  }
-});
-
-scrollFeedback.addEventListener('click', () => {
-  if (activeElement === 'scrollFeedback') {
-    feedbackPage.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    activeElement = 'scrollFeedback';
-  }
-});
-
-scrollScreensaver.addEventListener('click', () => {
-  if (activeElement === 'scrollScreensaver') {
-    screensaverPage.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    activeElement = 'scrollScreensaver';
-  }
-});
