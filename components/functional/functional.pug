@@ -1,11 +1,5 @@
 -
    const functionalList = ['Product marketing', 'Growth marketing', 'Creative', 'Marketing', 'PR',];
-   const functionalContent = [
-      {
-         title: 'Создание лендинга',
-         subtitle: 'Заведите доску, пригласите дизайнера, верстальщика и маркетолога, проведите брейншторм и зафиксируйте все идеи на доске, в колонке «Бэклог», приоритизируйте идеи - с помощью меток или отдельных колонок, наиболее приоритетным - назначьте дедлайны и передайте в работу исполнителям',
-      },
-   ]
 
 section.functional__page.page.animated__page#functional
    .functional__container
@@ -17,13 +11,10 @@ section.functional__page.page.animated__page#functional
                      li.functional-card-contant-paragraph
                         a.functional-card-contant-paragraph-link
                            | #{value}
-               each item in functionalContent
-                  .functional__card-content-text.card-content-text
-                     .card-content-text__title
-                        h2.card-content-text__title-h 
-                           | #{item.title}
-                     .card-content-text__subtitle
-                        p.card-content-text__subtitle-p 
-                           | #{item.subtitle}
+               .functional__card-content-text.card-content-text
+                  .card-content-text__title
+                     h2.card-content-text__title-h 
+                  .card-content-text__subtitle
+                     p.card-content-text__subtitle-p 
             .functional__card-images
                img.functional__card-img(src="./../img/functional/img.png" alt="Скрин системы")

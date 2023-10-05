@@ -1,4 +1,4 @@
-@import "./../scss/common.scss";
+// @import "./../scss/common.scss";
 
 .cards__page {
     background-color: #2B2B2B;
@@ -65,6 +65,7 @@
         }      
     }
     &:nth-child(3) {
+        padding: 30px 0px 62px 0;
         flex-basis: 100%;
         flex-direction: column-reverse;
         background: #4F23AE;
@@ -83,7 +84,7 @@
                     background: url("../img/card/arrow.svg") no-repeat;
                     top: 50%;
                     transform: translateY(-50%);      
-                    right: -68px;  
+                    right: -47px;  
                     @media screen and (max-width: 500px) {
                         top: 100%;
                         left: 50%;
@@ -116,7 +117,7 @@
         } 
         .card__images {
             position: absolute;
-            width: 130%;
+            width: 139%;
             height: auto;
             top: 50%;
             transform: translateY(-50%);    
@@ -165,8 +166,6 @@
 .card__content {
     display: flex;
     flex-direction: column;
-    flex: 1 1 auto;
-    justify-content: space-around;
     gap: 20px;
 }
 .card__title {
@@ -205,6 +204,7 @@
     flex-wrap: wrap;
     gap: 48px;
     width: 86%;
+    margin-top: 2.2%;
     @media screen and (max-width: 500px) {
         width: 50%;
     }

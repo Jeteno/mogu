@@ -1,17 +1,21 @@
-@import "./../scss/common.scss";
-
 .main-screen__container {
-    padding: 50px 0;
     @media screen and (max-width: 490px) {
         padding: 30px 0 10px 0;
+    }
+    @media screen and (max-width: 400px) {
+        padding: 16px 0 10px 0;
     }
 }
 .main-screen__body {
     position: relative;
     gap: 24px;
+    padding: 50px 0 76px 0;
     @media screen and (max-width: 1124px) {
         flex-wrap: wrap;
         justify-content: center;
+    }
+    @media screen and (max-width: 400px) {
+        padding: 0 0 76px 0;
     }
 }
 .main-screen__content {
@@ -21,12 +25,18 @@
     padding: 24px 24px 56px 24px;
     @media screen and (max-width: 490px) {
         padding: 0;
+        gap: 35px;
     }
 }
 .main-screen__content-text {
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+.main-screen__content-title {
+    @media screen and (max-width: 400px) {
+        width: 81%;
+    }
 }
 .main-screen__content-title-h {
     color: #222FDC;
@@ -36,6 +46,9 @@
     font-weight: 500;
     line-height: 80px;
     letter-spacing: -2px;
+    @media screen and (max-width: 400px) {
+        line-height: 50px;
+    }
 }
 .main-screen__content-subtitle-p {
     color: #222FDC;
@@ -45,6 +58,9 @@
     font-weight: 400;
     line-height: 36px;
     letter-spacing: -0.2px;
+    @media screen and (max-width: 400px) {
+        line-height: 20px; 
+    }
 }
 .main-screen__content-entry-field {
     display: flex;
@@ -69,6 +85,9 @@
     font-weight: 400;
     line-height: 48px; 
     letter-spacing: 0.1px;
+    @media screen and (max-width: 400px) {
+        line-height: 38px;
+    }
 }
 .input-group {
     position: relative;
@@ -81,7 +100,7 @@
     padding-left: 24px;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding: 30px 208px 30px 24px;
+    padding: 30px 208px 27px 24px;
     color: #B0B1C1;
     font-family: 'Inter', sans-serif;
     @include adaptiveFont(28, 18);
@@ -130,6 +149,7 @@
     }
 }
 .main-screen__image {
+    max-height: 694px;
     @media screen and (max-width: 1024px) {
         width: 100%;
         text-align: center;
@@ -140,8 +160,9 @@
     cursor: pointer;
     bottom: 0;
     background: url("../img/main-screen/arrow.svg");
+    background-repeat: no-repeat;
     width: 20px;
-    height: 34px;
+    height: 65px;
     bottom: 0;
     left: 24px;
     animation-name: jump;

@@ -72,3 +72,89 @@ scrollScreensaver.addEventListener('click', (event) => {
     screensaverPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
+
+const functionalNav = document.querySelector('.functional__card-content-list');
+const functionLink = document.querySelectorAll('.functional-card-contant-paragraph-link');
+const presentationTitle = document.querySelector('.card-content-text__title-h');
+const presentationSubTitle = document.querySelector('.card-content-text__subtitle-p');
+const functionalContent = [
+    {
+       title: 'Создание лендинга',
+       subtitle: 'Заведите доску, пригласите дизайнера, верстальщика и маркетолога, проведите брейншторм и зафиксируйте все идеи на доске, в колонке «Бэклог», приоритизируйте идеи - с помощью меток или отдельных колонок, наиболее приоритетным - назначьте дедлайны и передайте в работу исполнителям',
+    },
+    {
+       title: 'Lorem ipsum dolor sit amet',
+       subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque enim repellat aperiam molestias tenetur necessitatibus!'
+    },
+    {
+       title: 'Lorem ipsum dolor',
+       subtitle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
+    },
+];
+
+let currentIndexFunctional = 0;
+
+function setFirstCategoryActive() {
+    if (functionLink.length > 0) {
+       const firstCategory = functionLink[currentIndexFunctional];
+       
+       firstCategory.classList.remove('notActive');
+       firstCategory.classList.add('functional__active');
+    }
+};
+
+setFirstCategoryActive();
+
+function updateSliderClasses(index) {
+    functionLink.forEach(item => {
+        if(currentIndexFunctional <= functionalContent.length-1) {
+            item.classList.remove('functional__active');
+            for (let i = 0; i < functionalContent.length; i++) {
+                 if (functionLink[i]) {
+                     functionLink[i].classList.add('notActive')
+                 }
+            }     
+        }
+    });
+    
+    if(currentIndexFunctional <= functionalContent.length-1) {
+        functionLink[index].classList.toggle('functional__active');
+        functionLink[index].classList.toggle('notActive');    
+    }
+}
+
+functionLink.forEach((dot, index) => {
+    dot.addEventListener('click', (event) => {
+       event.preventDefault();
+       currentIndexFunctional = index;
+       
+       updateSliderClasses(currentIndexFunctional);
+    });
+ })
+
+for (let i = 1; i < functionalContent.length; i++) {
+    if (functionLink[i]) {
+        functionLink[i].classList.toggle('notActive')
+    }
+}
+
+function updateTitleSubtitle(index) {
+    presentationTitle.innerText = functionalContent[index].title !== undefined ? functionalContent[index].title : '';
+    presentationSubTitle.innerText = functionalContent[index].subtitle !== undefined ? functionalContent[index].subtitle : '';
+}
+
+function handleClick(event) {
+    const target = event.target;
+    if (target.classList.contains('functional-card-contant-paragraph-link')) {
+      const index = Array.from(target.parentNode.parentNode.children).indexOf(target.parentNode);
+      currentIndexFunctional = index;
+      if(currentIndexFunctional <= functionalContent.length-1) {
+        updateTitleSubtitle(index);
+        event.preventDefault();  
+      }
+   }
+}
+
+functionalNav.addEventListener('click', handleClick);
+
+updateTitleSubtitle(currentIndexFunctional);
