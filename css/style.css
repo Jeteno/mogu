@@ -1013,6 +1013,7 @@ h1, h2, h3, h4, h5, h6 {
           flex: 1 1 auto;
   -webkit-transition: top 0.5s ease;
   transition: top 0.5s ease;
+  cursor: pointer;
 }
 .card__container:nth-child(-n+2) {
   -ms-flex-preferred-size: 45%;
@@ -1190,7 +1191,18 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   gap: 20px;
+}
+
+.card__title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .card__title-h {
@@ -1533,6 +1545,12 @@ h1, h2, h3, h4, h5, h6 {
 .functional-card-contant-paragraph:nth-child(3) {
   background: #FFF;
   color: #5B605C;
+}
+.functional-card-contant-paragraph:hover:not(:nth-last-child(-n+2)) {
+  background: #F7FF8F;
+  color: #000;
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .card-content-text {

@@ -33,6 +33,7 @@
     color: #3C711E;
     flex: 1 1 auto;
     transition: top 0.5s ease;
+    cursor: pointer;
     &:nth-child(-n + 2) {
         flex-basis: calc(45%);
         @media screen and (max-width: 900px) {
@@ -164,7 +165,12 @@
 .card__content {
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
+    justify-content: space-around;
     gap: 20px;
+}
+.card__title {
+    flex: 1 1 auto;
 }
 .card__title-h {
     color: inherit;

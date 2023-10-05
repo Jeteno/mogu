@@ -63,7 +63,16 @@
         background: #FFF;
         color: #5B605C;
     }
+    &:hover {
+        &:not(:nth-last-child(-n+2)) {
+            background: #F7FF8F;
+            color: #000;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+    }
 }
+
 .card-content-text {
     display: flex;
     flex-direction: column;

@@ -1,18 +1,29 @@
+-
+   const functionalList = ['Product marketing', 'Growth marketing', 'Creative', 'Marketing', 'PR',];
+   const functionalContent = [
+      {
+         title: 'Создание лендинга',
+         subtitle: 'Заведите доску, пригласите дизайнера, верстальщика и маркетолога, проведите брейншторм и зафиксируйте все идеи на доске, в колонке «Бэклог», приоритизируйте идеи - с помощью меток или отдельных колонок, наиболее приоритетным - назначьте дедлайны и передайте в работу исполнителям',
+      },
+   ]
+
 section.functional__page.page.animated__page#functional
-    .functional__container
-       .functional__body
-          .functional__card
-             .functional__card-content
-                ul.functional__card-content-list
-                   li.functional-card-contant-paragraph Product marketing
-                   li.functional-card-contant-paragraph Growth marketing
-                   li.functional-card-contant-paragraph Creative
-                   li.functional-card-contant-paragraph Marketing
-                   li.functional-card-contant-paragraph PR
-                .functional__card-content-text.card-content-text
-                   .card-content-text__title
-                      h2.card-content-text__title-h Создание лендинга
-                   .card-content-text__subtitle
-                      p.card-content-text__subtitle-p Заведите доску, пригласите дизайнера, верстальщика и маркетолога, проведите брейншторм и зафиксируйте все идеи на доске, в колонке «Бэклог», приоритизируйте идеи - с помощью меток или отдельных колонок, наиболее приоритетным - назначьте дедлайны и передайте в работу исполнителям
-             .functional__card-images
-                img.functional__card-img(src="./../img/functional/img.png" alt="Скрин системы")
+   .functional__container
+      .functional__body
+         .functional__card
+            .functional__card-content
+               ul.functional__card-content-list
+                  each value in functionalList
+                     li.functional-card-contant-paragraph
+                        a.functional-card-contant-paragraph-link
+                           | #{value}
+               each item in functionalContent
+                  .functional__card-content-text.card-content-text
+                     .card-content-text__title
+                        h2.card-content-text__title-h 
+                           | #{item.title}
+                     .card-content-text__subtitle
+                        p.card-content-text__subtitle-p 
+                           | #{item.subtitle}
+            .functional__card-images
+               img.functional__card-img(src="./../img/functional/img.png" alt="Скрин системы")
