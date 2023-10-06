@@ -1,0 +1,36 @@
+-   
+    const menuValues = [
+        {
+            title: 'О нас',
+            href: '#cards',
+            id: 'scrollCards',
+        },
+        {
+            title: 'Кейсы',
+            href: '#functional',
+            id: 'scrollFunctional',
+        },
+        {
+            title: 'Обратная связь',
+            href: '#feedback',
+            id: 'scrollFeedback',
+        },
+    ]
+
+header.header__page.page
+    .header__container.container
+        .header__body.body
+            a.header__logo#scrolMainScreen(href="#main-screen")
+                img.header__logo-img(src="./../img//header/logo.svg", alt="logo")
+                img.header__logo-img-text(src="./../img/header/text-logo.svg", alt="mogu")
+            .menu__body
+                nav.header__nav-bar-menu.nav-bar-menu
+                    ul.nav-bar-menu__list
+                        each item in menuValues 
+                            li.nav-bar-menu__paragraph
+                                a.nav-bar-menu__paragraph-link(id=item.id href=item.href)
+                                    | #{item.title}
+                button.header__button
+                    | Войти
+            .menu__icon
+                span
