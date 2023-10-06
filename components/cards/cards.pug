@@ -1,57 +1,23 @@
--
-   const cardContent = [
-      {
-         title: 'Вся информация как на ладони',
-         subtitle: 'единая строка поиска для всех проектов - где бы ни была задача, вы быстро ее найдете',
-         img: './../img/card/img.png',
-         alt: 'card',
-      },
-      {
-         title: 'Ничто не мешает полету мысли',
-         subtitle: 'фиксируйте новые идеи в один клик, прикрепляйте файлы и подробные описания сути задач',
-         img: './../img/card/Saly-23.png',
-         alt: 'card',
-      },
-      {
-         title: 'Порядок в подарок',
-         subtitle: 'задачи удобно структурировать с помощью чек-листов, меток и пользовательских полей',
-         img: './../img/card/Folder.png',
-         alt: 'card',
-         list: ['обновляйте статус задачи', 'следите за сроками дедлайнов', 'отправляйте завершенные задачи в архив']
-      },
-      {
-         title: 'Совместная работа на одной доске',
-         subtitle: 'приглашайте коллег, бизнес-партнеров и заказчиков',
-      },
-      {
-         img: './../img/card/Saly-31.png',
-         alt: 'card',
-      },
-      {
-         title: 'Настройка под вас',
-         subtitle: 'устанавливайте персональный фон для каждого проекта',
-      },
-   ]
-
-section.cards__page.page.animated__page#cards
-    .cards__container
-       .cards__body
-         each item in cardContent
-            a.card__container
-               if item.list 
-                  ul.card__list
-                     if item.list 
-                        each list in item.list
-                           li.card__list-paragraph 
-                              each value in list
-                                 | #{value !== undefind ? value : ''}
-               if item.img 
-                  .card__images
-                     img.card__images-img(src=item.img !== undefind ? item.img : '', alt=item.alt !== undefind ? item.alt : '')
-               .card__content
-                  .card__title
-                     h2.card__title-h 
-                       | #{item.title !== undefind ? item.title : ''}
-                  .card__subtitle
-                     p.card__subtitle-p 
-                       | #{item.subtitle !== undefind ? item.subtitle : ''}
+mixin cards(content)
+   section.cards__page.page.animated__page#cards
+      .cards__container
+         .cards__body
+            each item in content
+               a.card__container
+                  if item.list 
+                     ul.card__list
+                        if item.list 
+                           each list in item.list
+                              li.card__list-paragraph 
+                                 each value in list
+                                    | #{value !== undefind ? value : ''}
+                  if item.img 
+                     .card__images
+                        img.card__images-img(src=item.img !== undefind ? item.img : '', alt=item.alt !== undefind ? item.alt : '')
+                  .card__content
+                     .card__title
+                        h2.card__title-h 
+                           | #{item.title !== undefind ? item.title : ''}
+                     .card__subtitle
+                        p.card__subtitle-p 
+                           | #{item.subtitle !== undefind ? item.subtitle : ''}

@@ -1,16 +1,8 @@
 const iconMenu = document.querySelector('.menu__icon');
+const menuBody = document.querySelector('.menu__body');
 
-const scrollCards = document.getElementById('scrollCards');
-const scrollFunctional = document.getElementById('scrollFunctional');
-const scrollFeedback = document.getElementById('scrollFeedback');
-const scrollScreensaver = document.getElementById('scrollScreensaver');
-const scrolMainScreen = document.getElementById('scrolMainScreen');
+const anchorLinks = document.querySelectorAll('a[href^="#"]');
 
-const cardsPage = document.querySelector('.cards__page');
-const functionalPage = document.querySelector('.functional__page');
-const feedbackPage = document.querySelector('.feedback__page');
-const screensaverPage = document.querySelector('.screensaver__page');
-const mainScreenPage = document.querySelector('.main-screen__page');
 const menuLink = document.querySelectorAll('a.nav-bar-menu__paragraph-link');
 
 const functionalNav = document.querySelector('.functional__card-content-list');
@@ -43,13 +35,17 @@ const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@((
 let currentIndexFunctional = 0;
 
 let currentIndex = 0;
- 
+
 if (iconMenu) {
-    const menuBody = document.querySelector('.menu__body');
     iconMenu.addEventListener('click', function (e) {
         iconMenu.classList.toggle('active__menu');
         menuBody.classList.toggle('active__menu');
     })
+}
+
+function removeMenu() {
+    iconMenu.classList.remove('active__menu');
+    menuBody.classList.remove('active__menu');
 }
 
 window.addEventListener('scroll', function() {
@@ -66,6 +62,40 @@ window.addEventListener('scroll', function() {
     }
 });
 
+window.addEventListener('scroll', function() {
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    for(let i = 0; i < anchorLinks.length; i++) {
+        let link = anchorLinks[i];
+        let target = document.querySelector(link.getAttribute('href'));
+
+        if (target) {
+            let offset = target.getBoundingClientRect().top + window.pageYOffset;
+            let windowHeight = window.innerHeight;
+
+            if (window.pageYOffset > offset - windowHeight + 200) {
+                block.style.transform = 'translateX(0)';
+            } 
+        }
+    }
+});
+
+function smoothScroll(target) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+anchorLinks.forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        let target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+            smoothScroll(target);
+            removeMenu();
+            addActiveClassToLink()
+        }
+    });
+});
+
 function addActiveClassToLink(index) {
     menuLink.forEach(item => item.classList.remove('active'));
     menuLink[index].classList.add('active');
@@ -78,28 +108,6 @@ menuLink.forEach((dot, index) => {
        addActiveClassToLink(currentIndex);
     });
  });
-
-scrolMainScreen.addEventListener('click', (event) => {
-    event.preventDefault();
-    mainScreenPage.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    addActiveClassToLink()
-});
-scrollCards.addEventListener('click', (event) => {
-    event.preventDefault();
-    cardsPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-scrollFunctional.addEventListener('click', (event) => {
-    event.preventDefault();
-    functionalPage.scrollIntoView({ behavior: 'smooth', block: 'end' });
-});
-scrollFeedback.addEventListener('click', (event) => {
-    event.preventDefault();
-    feedbackPage.scrollIntoView({ behavior: 'smooth', block: 'end' });
-});
-scrollScreensaver.addEventListener('click', (event) => {
-    event.preventDefault();
-    screensaverPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
 
 function setFirstCategoryActive() {
     if (functionLink.length > 0) {

@@ -1,35 +1,28 @@
--   
-   const entryContent = [
-      {
-         title: 'Таск-трекер для креативных команд',
-         subtitle: 'Создавайте доски, приглашайте коллег и партнеров, работайте совместно над задачами!',
-      }
-   ]
-   const entryValues = ['Бесплатно', 'Без привязки карты', '2000+ пользователей']
-
-section.main-screen__page.page#main-screen
-    .main-screen__container.container
-       .main-screen__body.body
-          .main-screen__content
-             .main-screen__content-text
-               each item in entryContent
-                  .main-screen__content-title
-                    h1.main-screen__content-title-h
-                       | #{item.title}
-                  .main-screen__content-subtitle
-                    p.main-screen__content-subtitle-p
-                       | #{item.subtitle}
-             .main-screen__content-entry-field.entry-field
-                ul.entry-field__list
-                  each item in entryValues
-                     li.entry-field__list-paragraph
-                        | #{item}
-                .entry-field__subscription_input.input-group
-                   input.input-group-control(placeholder="Электронная почта" aria-label="Электронная почта" aria-describedby="subscribe-btn")
-                   .input-group-append
-                   button.btn.btn-outline-secondary(type="button" id="subscribe-btn")
-                      | Начать
-                      span →
-          .main-screen__image
-             img.main-screen__image-img(src="./../img/main-screen/Component.png", alt="")
-          button.main-screen__btn#scrollScreensaver 
+mixin main-screen(content, values)
+   section.main-screen__page.page#main-screen
+      .main-screen__container.container
+         .main-screen__body.body
+            .main-screen__content
+               .main-screen__content-text
+                  each item in content
+                     .main-screen__content-title
+                        h1.main-screen__content-title-h
+                           | #{item.title}
+                     .main-screen__content-subtitle
+                        p.main-screen__content-subtitle-p
+                           | #{item.subtitle}
+               .main-screen__content-entry-field.entry-field
+                  ul.entry-field__list
+                     each item in values
+                        li.entry-field__list-paragraph
+                           | #{item}
+                  .entry-field__subscription_input.input-group
+                     input.input-group-control(placeholder="Электронная почта" aria-label="Электронная почта" aria-describedby="subscribe-btn")
+                     .input-group-append
+                     button.btn.btn-outline-secondary(type="button" id="subscribe-btn")
+                        | Начать
+                        span →
+            .main-screen__image
+               //- +picture("./../img/main-screen/mobile-main.png", "./../img/main-screen/Component.png", "pen", "main-screen__image-img")
+               img.main-screen__image-img(src="./../img/main-screen/Component.png", alt="")
+            a.main-screen__btn#scrollScreensaver(href="#screensaver") 

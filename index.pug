@@ -1,15 +1,89 @@
 extends base
+include mixin
+include components\header\header.pug
+include components\mainScreen\mainScreen.pug
+include components\cards\cards.pug
+include components\functional\functional.pug
 
 block content 
+  -
+    const menuValues = [
+        {
+            title: 'О нас',
+            href: '#cards',
+            id: 'scrollCards',
+        },
+        {
+            title: 'Кейсы',
+            href: '#functional',
+            id: 'scrollFunctional',
+        },
+        {
+            title: 'Обратная связь',
+            href: '#feedback',
+            id: 'scrollFeedback',
+        },
+    ]
+    const entryContent = [
+      {
+         title: 'Таск-трекер \u00A0 для креативных команд',
+         subtitle: 'Создавайте доски, приглашайте коллег и партнеров, работайте совместно над задачами!',
+      }
+    ]
+    const entryValues = ['Бесплатно', 'Без привязки карты', '2000+ пользователей']
+    const cardContent = [
+        {
+            title: 'Вся информация как на ладони',
+            subtitle: 'единая строка поиска для всех проектов - где бы ни была задача, вы быстро ее найдете',
+            img: './../img/card/img.png',
+            alt: 'card',
+        },
+        {
+            title: 'Ничто не мешает полету мысли',
+            subtitle: 'фиксируйте новые идеи в один клик, прикрепляйте файлы и подробные описания сути задач',
+            img: './../img/card/Saly-23.png',
+            alt: 'card',
+        },
+        {
+            title: 'Порядок в подарок',
+            subtitle: 'задачи удобно структурировать с помощью чек-листов, меток и пользовательских полей',
+            img: './../img/card/Folder.png',
+            alt: 'card',
+            list: ['обновляйте статус задачи', 'следите за сроками дедлайнов', 'отправляйте завершенные задачи в архив']
+        },
+        {
+            title: 'Совместная работа на одной доске',
+            subtitle: 'приглашайте коллег, бизнес-партнеров и заказчиков',
+            image: {
+              source: [
+                {
+                  srcSet: "",
+                  media: ""
+                }
+              ],
+              img: {
+                src: "",
+                alt: ""
+              }
+            }
+        },
+        {
+            img: './../img/card/Saly-31.png',
+            alt: 'card',
+        },
+        {
+            title: 'Настройка под вас',
+            subtitle: 'устанавливайте персональный фон для каждого проекта',
+        },
+    ]
+    const functionalList = ['Product marketing', 'Growth marketing', 'Creative', 'Marketing', 'PR',];
   .wrapper
-      include components\header\header.pug
+      +header(menuValues)
       main.main
-         include components\mainScreen\mainScreen.pug
-         include components\screensaver\screensaver.pug
-         include components\cards\cards.pug
-         include components\delimiter\delimiter.pug
-         include components\functional\functional.pug
-         include components\feedback\feedback.pug
-         script(src="./../index.js")
-      | 
-  | 
+        +main-screen(entryContent, entryValues)
+        include components\screensaver\screensaver.pug
+        +cards(cardContent)
+        include components\delimiter\delimiter.pug
+        +functional(functionalList)
+        include components\feedback\feedback.pug
+        script(src="./../index.js")

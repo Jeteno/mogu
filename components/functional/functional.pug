@@ -1,20 +1,19 @@
--
-   const functionalList = ['Product marketing', 'Growth marketing', 'Creative', 'Marketing', 'PR',];
-
-section.functional__page.page.animated__page#functional
-   .functional__container
-      .functional__body
-         .functional__card
-            .functional__card-content
-               ul.functional__card-content-list
-                  each value in functionalList
-                     li.functional-card-contant-paragraph
-                        a.functional-card-contant-paragraph-link
-                           | #{value}
-               .functional__card-content-text.card-content-text
-                  .card-content-text__title
-                     h2.card-content-text__title-h 
-                  .card-content-text__subtitle
-                     p.card-content-text__subtitle-p 
-            .functional__card-images
-               img.functional__card-img(src="./../img/functional/img.png" alt="Скрин системы")
+mixin functional(content)
+   section.functional__page.page.animated__page#functional
+      .functional__container
+         .functional__body
+            .functional__card
+               .functional__card-content
+                  ul.functional__card-content-list
+                     each value in content
+                        li.functional-card-contant-paragraph
+                           a.functional-card-contant-paragraph-link
+                              | #{value}
+                  .functional__card-content-text.card-content-text
+                     .card-content-text__title
+                        h2.card-content-text__title-h 
+                     .card-content-text__subtitle
+                        p.card-content-text__subtitle-p 
+               .functional__card-images
+                  //- +picture("./../img/functional/functional-mobile.png", "./../img/functional/img.png", "Скрин системы", "functional__card-img")
+                  img.functional__card-img(src="./../img/functional/img.png" alt="Скрин системы")

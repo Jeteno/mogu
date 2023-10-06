@@ -1,0 +1,5 @@
+mixin picture(mobileImage, desktopImage, alt, className)
+    picture
+        source(srcset=mobileImage, media='(max-width: 767px)')
+        source(srcset=desktopImage, media='(min-width: 768px)')
+        img(src=desktopImage, alt=alt, class=className)

@@ -25,7 +25,7 @@
     padding: 24px 24px 56px 24px;
     @media screen and (max-width: 490px) {
         padding: 0;
-        gap: 32px;
+        gap: 29px;
     }
 }
 .main-screen__content-text {
@@ -35,7 +35,7 @@
 }
 .main-screen__content-title {
     @media screen and (max-width: 400px) {
-        width: 81%;
+        width: 82%;
     }
 }
 .main-screen__content-title-h {
@@ -48,6 +48,11 @@
     letter-spacing: -2px;
     @media screen and (max-width: 400px) {
         line-height: 50px;
+    }
+}
+.main-screen__content-subtitle {
+    @media screen and (max-width: 400px) {
+        width: 95%;
     }
 }
 .main-screen__content-subtitle-p {
@@ -74,6 +79,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    @media screen and (max-width: 400px) {
+        padding-left: 4px;
+        gap: 16px 13px;
+    }
 }
 .entry-field__list-paragraph {
     border-radius: 12px;
@@ -116,7 +125,7 @@
     line-height: 40px; 
     letter-spacing: -0.1px;
     @media screen and (max-width: 490px) {
-        padding: 14px 150px 14px 16px;
+        padding: 14px 130px 14px 16px;
         border-radius: 20px;
     }
 }
